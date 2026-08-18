@@ -15,10 +15,8 @@ class Solution {
             if (curr == null) {
                 return "";
             } 
-            if(curr[1] > 0) {
-                sb.append((char)curr[0]);
-                curr[1]--;
-            }
+            sb.append((char)curr[0]);
+            curr[1]--;
             if(prev != null && prev[1] > 0) {
                 pq.add(prev);
             }
