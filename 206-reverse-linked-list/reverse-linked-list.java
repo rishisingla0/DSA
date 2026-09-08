@@ -13,22 +13,12 @@ class Solution {
         if(head == null || head.next == null) {
             return head;
         }
-        ListNode prev = null;
-        ListNode curr = head;
 
-        return reverse(curr, prev);
-    }
+        ListNode reversedHead = reverseList(head.next);
 
-    public ListNode reverse(ListNode curr, ListNode prev) {
-        if(curr == null) {
-            return prev;
-        }
+        head.next.next = head;
+        head.next = null;
 
-        ListNode next = curr.next;
-        curr.next = prev;
-        prev = curr;
-        curr = next;
-
-        return reverse(curr, prev);
+        return reversedHead;
     }
 }
