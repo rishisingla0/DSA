@@ -1,7 +1,7 @@
 class Solution {
     public int[] nextGreaterElements(int[] nums) {
-        int[] ans = new int[nums.length];
         Stack<Integer> stack = new Stack<>();
+        int[] ans = new int[nums.length];
 
         for(int i=0; i<nums.length; i++) {
             while(!stack.isEmpty() && nums[i] > nums[stack.peek()]) {
